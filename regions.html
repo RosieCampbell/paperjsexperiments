@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Edges</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="paperjs-v0.9.18/examples/css/style.css">
+	<script type="text/javascript" src="paperjs-v0.9.18/dist/paper-full.js"></script>
+	<script type="text/javascript" src="pixastic.js"></script>
+
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+
+	var colours = [];
+	var vectors = [];
+	var c=document.getElementById("myCanvas");
+	var ctx=c.getContext("2d");
+	var img = new Image();
+	img.src="pic.jpg";
+	img.onload = function(){
+		ctx.drawImage(img,0,0,img.width*0.5,img.height*0.5);
+		var imgPixels=ctx.getImageData(0,0,img.width*0.5,img.height*0.5);
+		for(var y = 0; y < imgPixels.height; y++){  
+			var colourRow = [];
+			for(var x = 0; x < imgPixels.width; x++){  
+			    var i = (y * 4) * imgPixels.width + x * 4;  
+			    var avg = (imgPixels.data[i] + imgPixels.data[i + 1] + imgPixels.data[i + 2]) / 3; 
+			    avg = Math.floor(avg/128) * 255;
+			    //console.log(avg);
+			    imgPixels.data[i] = avg;   
+			    imgPixels.data[i + 1] = avg;   
+			    imgPixels.data[i + 2] = avg;  
+			    colourRow.push(Math.floor(avg/128));
+			}  
+			colours.push(colourRow);
+		}
+		console.dir(colours);
+		ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);
+
+		for(var y = 0; y < colours.length; y++){  
+			var colourRow = colours[y];
+			var vector = [];
+			for(var x = 0; x < colourRow.length; x++){  
+			    
+			}  
+		}
+
+
+
+	}  
+
+	 
+
+</script>
+
+</body>
+</html>

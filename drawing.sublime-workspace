@@ -1,0 +1,690 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"colour",
+				"colourRow"
+			],
+			[
+				"col",
+				"colours"
+			],
+			[
+				"on",
+				"onload"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"img",
+				"imgData"
+			],
+			[
+				"im",
+				"imgData"
+			],
+			[
+				"imgs",
+				"imgs"
+			],
+			[
+				"Gizm",
+				"GizmoAlbum"
+			],
+			[
+				"gizmo",
+				"gizmos"
+			],
+			[
+				"giz",
+				"gizmoId"
+			],
+			[
+				"proto",
+				"proto	Prototype"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"st",
+				"stroke"
+			],
+			[
+				"str",
+				"strokeStyle"
+			],
+			[
+				"dra",
+				"drawLine"
+			],
+			[
+				"f",
+				"fireworks"
+			],
+			[
+				"backgroun",
+				"background_image"
+			],
+			[
+				"gizm",
+				"gizmos"
+			],
+			[
+				"la",
+				"layers"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"red",
+				"refID"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"laye",
+				"layerId"
+			],
+			[
+				"lay",
+				"layers"
+			],
+			[
+				"gi",
+				"gizmoId"
+			],
+			[
+				"gr",
+				"ghref"
+			],
+			[
+				"wal",
+				"wallData"
+			],
+			[
+				"spac",
+				"space_gizmo"
+			],
+			[
+				"pop",
+				"populateLayers"
+			],
+			[
+				"g",
+				"ghref"
+			],
+			[
+				"pr",
+				"prototype"
+			],
+			[
+				"p",
+				"prototype"
+			],
+			[
+				"flo",
+				"flock_gizmo"
+			],
+			[
+				"vd_",
+				"vd_room_id"
+			],
+			[
+				"creat",
+				"create_background_gizmo"
+			],
+			[
+				"Gizmo",
+				"GizmoBackground"
+			],
+			[
+				"grid",
+				"gridWidth"
+			],
+			[
+				"wall",
+				"wall"
+			],
+			[
+				"wri",
+				"writeGizmos"
+			],
+			[
+				"gri",
+				"gridHeight"
+			],
+			[
+				"for",
+				"for	for (…) {…}"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "rings.html",
+			"settings":
+			{
+				"buffer_size": 1194,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cross.html",
+			"settings":
+			{
+				"buffer_size": 1598,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pixastic.js",
+			"settings":
+			{
+				"buffer_size": 82600,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n<head>\n	<meta charset=\"UTF-8\">\n	<title>Edges</title>\n	<script src=\"//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js\"></script>\n	<link rel=\"stylesheet\" href=\"paperjs-v0.9.18/examples/css/style.css\">\n	<script type=\"text/javascript\" src=\"paperjs-v0.9.18/dist/paper-full.js\"></script>\n	<script type=\"text/javascript\" src=\"pixastic.js\"></script>\n\n</head>\n<body>\n\n<canvas id=\"myCanvas\" width=\"400\" height=\"400\" style=\"border:1px solid #d3d3d3;\">\nYour browser does not support the HTML5 canvas tag.</canvas>\n\n<script>\n\n	var colours = [];\n	var vectors = [];\n	var c=document.getElementById(\"myCanvas\");\n	var ctx=c.getContext(\"2d\");\n	var img = new Image();\n	img.src=\"pic.jpg\";\n	img.onload = function(){\n		ctx.drawImage(img,0,0,img.width*0.5,img.height*0.5);\n		var imgPixels=ctx.getImageData(0,0,img.width*0.5,img.height*0.5);\n		for(var y = 0; y < imgPixels.height; y++){  \n			var colourRow = [];\n			for(var x = 0; x < imgPixels.width; x++){  \n			    var i = (y * 4) * imgPixels.width + x * 4;  \n			    var avg = (imgPixels.data[i] + imgPixels.data[i + 1] + imgPixels.data[i + 2]) / 3; \n			    avg = Math.floor(avg/128) * 255;\n			    //console.log(avg);\n			    imgPixels.data[i] = avg;   \n			    imgPixels.data[i + 1] = avg;   \n			    imgPixels.data[i + 2] = avg;  \n			    colourRow.push(Math.floor(avg/128));\n			}  \n			colours.push(colourRow);\n		}\n		console.dir(colours);\n		ctx.putImageData(imgPixels, 0, 0, 0, 0, imgPixels.width, imgPixels.height);\n\n		for(var y = 0; y < colours.length; y++){  \n			var colourRow = colours[y];\n			var vector = [];\n			for(var x = 0; x < colourRow.length; x++){  \n			    if(c)\n			}  \n		}\n\n\n\n	}  \n\n	 \n\n</script>\n\n</body>\n</html>\n",
+			"file": "regions.html",
+			"file_size": 1678,
+			"file_write_time": 130422312500000000,
+			"settings":
+			{
+				"buffer_size": 1683,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dots.html",
+			"settings":
+			{
+				"buffer_size": 1192,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "Point.js",
+			"settings":
+			{
+				"buffer_size": 1923,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"pa",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/rosiecam/Box Sync/Github/Drawing/crosses.html",
+		"/Users/rosiecam/Box Sync/Github/Drawing/script.js",
+		"/Users/rosiecam/Box Sync/Github/Drawing/index.html",
+		"/Users/rosiecam/Box Sync/Github/Drawing/paperjs-v0.9.18/examples/Rasters/Raster.html",
+		"/Users/rosiecam/Box Sync/Github/Drawing/SpiralRaster.html",
+		"/Users/rosiecam/Box Sync/Github/Drawing/paperjs-v0.9.18/examples/Paperjs.org/DivisionRaster.html",
+		"/Users/rosiecam/Box Sync/Github/Drawing/drawing.sublime-project",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/setup.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/src/GizmoClock.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/glastonbury.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/polaroid.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/src/EventManager.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/src/Wall.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/plain.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/src/GizmoPolaroid.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/glastonbury-quick.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/LayoutManager.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/comms.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/Layer.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/delete_gizmo.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/GizmoAlbum.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/GizmoBackground.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/wall.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/GizmoClock.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/GizmoImage.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/src/resources/layer.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/layer.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/create_layer.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/gizmo.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/src/utils.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/src/validate.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/delete_layer.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/Gizmo.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/src/resources/gizmo.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/change_album.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/room.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/basicgrid.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/img/vintageflock.jpg",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/src/resources/wall.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/src/resources/room.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/index.js",
+		"/Users/rosiecam/Box Sync/Posters/TVXtemplate-greys.svg",
+		"/Users/rosiecam/Box Sync/Career Development/EngD/EngD application",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/selectWall.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/createArtAlbum",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/clients/mobile/gen/com/example/discoverdevicesandservices/R.java",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/src/system_init.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/GizmoWeather.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/test/gizmo/gizmo.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/main.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/demo/rosie.py",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/wall/src/GizmoTodo.js",
+		"/Users/rosiecam/Box Sync/SmartWallpaper/smartwallpaper.sublime-project",
+		"/Users/rosiecam/Box Sync/Useful stuff/proxies",
+		"/Users/rosiecam/Library/Application Support/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			"/Users/rosiecam/Box Sync/SmartWallpaper/server/app/www/src",
+			"/Users/rosiecam/Box Sync/SmartWallpaper/server",
+			"/Users/rosiecam/Box Sync/SmartWallpaper"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"edges2",
+			"path",
+			");\n",
+			"draw",
+			"delta",
+			"ctx",
+			"30",
+			"polaroid2010",
+			"polaroid2013",
+			"polaroid",
+			"clock",
+			"context",
+			"map",
+			"poster",
+			"'];",
+			"hippie_tile",
+			"hippie_tile_layer",
+			"hippie_tile",
+			" 		\n",
+			"ctx",
+			"c2d",
+			"hippie_tile_layer",
+			");\n",
+			"that.gizmos[gizmoId].update();",
+			"populateGizmos",
+			"tearDown",
+			"z_index",
+			"wallId",
+			"gizmo[giz",
+			"gizmoId",
+			"gizmo",
+			"z_inde",
+			"layers",
+			"z-",
+			"Image",
+			"stage",
+			"easel",
+			"tween",
+			"setOc",
+			"gizmo",
+			"container",
+			"wallDer",
+			"Wall",
+			"x",
+			"container",
+			"easel",
+			"renderg",
+			"easel",
+			"clears",
+			"tick",
+			"build",
+			".build",
+			"build",
+			"buil",
+			"this",
+			"dir",
+			"holdti",
+			"associate_gizmo_with_wall",
+			"gizmo.associate_gizmo_with_wall",
+			"thebitma",
+			"easel",
+			"create_gizmo",
+			"gizmo.create_gizmo",
+			"gizmodef",
+			"};\n",
+			"GizmoRosie",
+			"GizmoAlbum",
+			"associate_gizmo_with_wall",
+			"associate",
+			"Accessibility",
+			"3. A"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"GizmoWeather"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "rings.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1194,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								762,
+								762
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "cross.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1598,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								360,
+								360
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 91.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "pixastic.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 82600,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								37994,
+								37998
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": false,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 24585.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "regions.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1683,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1630,
+								1630
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 256.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "dots.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1192,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								314,
+								314
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Point.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1923,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1923,
+								1923
+							]
+						],
+						"settings":
+						{
+							"WordCountShouldRun": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 100.0
+	},
+	"project": "drawing.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 182.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

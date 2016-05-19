@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Edges</title>
+	<link rel="stylesheet" href="paperjs-v0.9.18/examples/css/style.css">
+	<script type="text/javascript" src="paperjs-v0.9.18/dist/paper-full.js"></script>
+	<script type="text/paperscript" canvas="canvas">
+		var raster = new Raster('mona');
+		raster.visible = false;
+		var gridSize = 4;
+		var spacing = 1;
+		raster.on('load', function() {
+			raster.size = new Size(200, raster.height/raster.width*200);
+
+			for (var y = 0; y < raster.height; y++) {
+				for(var x = 0; x < raster.width; x++) {
+					var color = raster.getPixel(x, y);
+					if(color.gray < 1){
+						var path = new Path.Circle({
+							center: new Point(x, y) * gridSize,
+							radius: gridSize / 2 / spacing,
+							strokeColor: 'black'
+						});
+					}
+					path.scale(1 - color.gray);
+				}
+			}
+			project.activeLayer.position = view.center;
+		});
+
+		function convertCanvasToImage(canvas) {
+			var image = new Image();
+			image.src = canvas.toDataURL("image/png");
+			return image;
+		}
+	</script>
+</head>
+<body>
+	<canvas id="canvas" resize style="background-color:white"></canvas>
+	<img id="mona" style="display: none;" src="pic.jpg">
+</body>
+</html>

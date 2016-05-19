@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Edges</title>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<link rel="stylesheet" href="paperjs-v0.9.18/examples/css/style.css">
+	<script type="text/javascript" src="paperjs-v0.9.18/dist/paper-full.js"></script>
+	<script type="text/javascript" src="pixastic.js"></script>
+
+</head>
+<body>
+	<canvas id="canvas" resize style="background-color:white"></canvas>
+		<script type="text/javascript" canvas="canvas">
+
+		var canvas = $('#canvas')[0].getContext("2d");
+		var img = new Image();
+		var edged;
+		img.onload = function() {
+			// img = Pixastic.process(img, "brightness", {brightness:50,contrast:0.5});
+			// img = Pixastic.process(img, "removenoise");
+			// img = Pixastic.process(img, "edges", {mono:true,invert:true});
+			
+			img = Pixastic.process(img, "desaturate");
+			img = Pixastic.process(img, "posterize", {levels:2});
+			 img = Pixastic.process(img, "removenoise");
+			//canvas.drawImage(img,0,0);
+			//edged = convertCanvasToImage(canvas);
+		}
+		document.body.appendChild(img);
+		img.src = "pic.jpg";
+		img.id = "pic";
+		
+		/**var raster = new Raster('pic');
+		raster.visible = false;
+		var gridSize = 4;
+		var spacing = 1;
+		raster.on('load', function() {
+			raster.size = new Size(200, raster.height/raster.width*200);
+
+			for (var y = 0; y < raster.height; y++) {
+				for(var x = 0; x < raster.width; x++) {
+					var color = raster.getPixel(x, y);
+					if(color.gray < 1){
+						var path = new Path.Circle({
+							center: new Point(x, y) * gridSize,
+							radius: gridSize / 2 / spacing,
+							fillColor: 'black'
+						});
+					}
+					path.scale(1 - color.gray);
+				}
+			}
+			project.activeLayer.position = view.center;
+		});
+*/
+		function convertCanvasToImage(canvas) {
+			var image = new Image();
+			image.src = canvas.toDataURL("image/png");
+			return image;
+		}
+	</script>
+</body>
+</html>
